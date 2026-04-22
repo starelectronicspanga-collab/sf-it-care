@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF IT CARE | Shakeel Ahmad</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #05070a; 
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 60px;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px 20px;
+            text-align: center;
+            width: 100%;
+            background: radial-gradient(circle at top, #1e3a8a 0%, transparent 70%);
+        }
+
+        /* Stylish Logo with Laptop Icon */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .laptop-icon {
+            width: 50px;
+            height: 50px;
+            fill: #3b82f6;
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif; /* Stylish Tech Font */
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #ffffff 40%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .managed-by {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* Audit Box */
+        .audit-container {
+            width: 90%;
+            max-width: 400px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        input[type="url"] {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 14px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 12px;
+            outline: none;
+        }
+
+        .analyze-btn {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* 3D Shine Buttons */
+        .services {
+            width: 90%;
+            max-width: 400px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .shine-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .shine-btn::before, .audit-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-25deg);
+            animation: shine-loop 5s infinite;
+        }
+
+        @keyframes shine-loop {
+            0% { left: -150%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .shine-btn h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .shine-btn p {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .whatsapp-btn {
+            margin-top: 40px;
+            background: #ffffff;
+            color: #000;
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .footer-text {
+            margin-top: 40px;
+            font-size: 10px;
+            color: #475569;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="logo-container">
+            <!-- Professional Laptop SVG Icon -->
+            <svg class="laptop-icon" viewBox="0 0 24 24">
+                <path d="M20,18c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/>
+            </svg>
+            <h1>SF IT CARE</h1>
+        </div>
+        <span class="managed-by">Managed by Shakeel Ahmad</span>
+    </section>
+
+    <div class="audit-container">
+        <input type="url" placeholder="Enter website URL...">
+        <button class="analyze-btn">Analyze Now</button>
+    </div>
+
+    <section class="services">
+        <a href="#" class="shine-btn">
+            <h3>🚀 SEO Ranking</h3>
+            <p>Strategic optimization for search dominance.</p>
+        </a>
+
+        <a href="#" class="shine-btn">
+            <h3>⚙️ Web Control</h3>
+            <p>Advanced management & speed optimization.</p>
+        </a>
+
+        <a href="#" class="shine-btn">
+            <h3>📊 Growth Lab</h3>
+            <p>Competitive analysis & brand scaling.</p>
+        </a>
+    </section>
+
+    <a href="#" class="whatsapp-btn">WORK WITH US</a>
+
+    <div class="footer-text">© 2024 SF IT CARE • SHAKEEL AHMAD</div>
+
+</body>
+</html>
