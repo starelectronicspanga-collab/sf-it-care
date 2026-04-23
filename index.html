@@ -100,8 +100,6 @@
             z-index: 1000; text-decoration: none; transition: 0.3s;
         }
 
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
-
         /* Glassy Notification Window (About Me) */
         #aboutPopup {
             position: fixed; bottom: -500px; right: 20px;
@@ -150,7 +148,7 @@
         </div>
     </section>
 
-    <!-- Floating WhatsApp Icon (Change number here) -->
+    <!-- Floating WhatsApp Icon -->
     <a href="https://wa.me" class="whatsapp-float" target="_blank">
         <svg style="width:35px; fill:white;" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.292 0-4.505.903-6.213 2.531-1.708 1.628-2.656 3.791-2.656 6.083 0 2.292.948 4.455 2.656 6.083 1.708 1.628 3.921 2.531 6.213 2.531 2.292 0 4.505-.903 6.213-2.531 1.708-1.628 2.656-3.791 2.656-6.083 0-2.292-.948-4.455-2.656-6.083-1.708-1.628-3.921-2.531-6.213-2.531zm3.421 12.305c-.171.478-.847.886-1.18 1.042-.333.156-.763.292-1.396.111-.634-.181-1.372-.622-2.128-1.144-.756-.522-1.442-1.161-2.023-1.859-.581-.698-1.041-1.446-1.314-2.181-.273-.735-.386-1.355-.175-1.782.211-.427.674-.755 1.018-.948.344-.193.639-.234.887-.041.248.193.535.53.774.883.239.353.447.747.318.918-.129.171-.433.313-.679.522-.246.209-.434.427-.225.807.209.38.742 1.258 1.547 1.932.805.674 1.488.887 1.868.995.38.108.611.041.821-.211.21-.252.887-1.042 1.139-1.396.252-.354.505-.292.847-.135.342.157 2.164 1.021 2.249 1.18.085.159.085.674-.085 1.151z"/></svg>
     </a>
@@ -165,25 +163,19 @@
     <div class="footer-text">© 2024 SF IT CARE • SHAKEEL AHMAD</div>
 
     <script>
-        // Analysis Function
         function startAnalysis() {
             var url = document.getElementById('userUrl').value;
             if (url) {
                 if (!url.startsWith('http')) { url = 'https://' + url; }
+                // Sahi Google analysis link
                 window.open('https://web.dev' + encodeURIComponent(url), '_blank');
             } else {
                 alert("Please enter a website URL first.");
             }
         }
 
-        // 1 Second Popup Timer
-        setTimeout(function() {
-            document.getElementById('aboutPopup').classList.add('show');
-        }, 1000);
-
-        function closePopup() {
-            document.getElementById('aboutPopup').classList.remove('show');
-        }
+        setTimeout(function() { document.getElementById('aboutPopup').classList.add('show'); }, 1000);
+        function closePopup() { document.getElementById('aboutPopup').classList.remove('show'); }
     </script>
 
 </body>
