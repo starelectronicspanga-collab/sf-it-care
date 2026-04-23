@@ -7,12 +7,7 @@
     <style>
         @import url('https://googleapis.com');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
         body {
             background: #05070a; 
@@ -20,200 +15,176 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
             overflow-x: hidden;
         }
 
         /* Hero Section */
         .hero {
-            padding: 60px 20px 20px;
+            padding: 50px 20px 20px;
             text-align: center;
             width: 100%;
             background: radial-gradient(circle at top, #1e3a8a 0%, transparent 70%);
         }
 
-        /* Stylish Logo with Laptop Icon */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 5px;
-        }
-
         .laptop-icon {
-            width: 50px;
-            height: 50px;
+            width: 50px; height: 50px;
             fill: #3b82f6;
             filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-family: 'Orbitron', sans-serif; /* Stylish Tech Font */
-            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
             font-weight: 900;
-            letter-spacing: 2px;
             background: linear-gradient(to bottom, #ffffff 40%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
         }
 
         .managed-by {
-            font-size: 13px;
-            color: #94a3b8;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            display: block;
+            font-size: 12px; color: #94a3b8; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px;
+            margin-bottom: 25px; display: block;
         }
 
-        /* Audit Box */
+        /* Audit Box (SEO Tool) */
         .audit-container {
-            width: 90%;
-            max-width: 400px;
-            margin-bottom: 30px;
+            width: 90%; max-width: 400px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 20px;
+            padding: 25px; border-radius: 20px;
+            margin-bottom: 30px;
             backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
         }
 
         input[type="url"] {
-            width: 100%;
-            background: rgba(255,255,255,0.05);
+            width: 100%; background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 14px;
-            border-radius: 12px;
-            color: white;
-            margin-bottom: 12px;
-            outline: none;
+            padding: 14px; border-radius: 12px;
+            color: white; margin-bottom: 12px; outline: none;
         }
 
         .analyze-btn {
-            width: 100%;
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            width: 100%; background: #2563eb; color: white; border: none;
+            padding: 14px; border-radius: 12px; font-weight: 800; 
+            text-transform: uppercase; cursor: pointer; transition: 0.3s;
         }
 
-        /* 3D Shine Buttons */
-        .services {
-            width: 90%;
-            max-width: 400px;
-            display: grid;
-            gap: 15px;
-        }
+        .analyze-btn:hover { background: #1d4ed8; transform: scale(1.02); }
+
+        /* Services Section */
+        .services { width: 90%; max-width: 400px; display: grid; gap: 15px; }
 
         .shine-btn {
             position: relative;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(59, 130, 246, 0.2);
-            padding: 20px;
-            border-radius: 15px;
-            text-decoration: none;
+            padding: 20px; border-radius: 15px;
+            text-decoration: none; overflow: hidden;
             display: block;
-            overflow: hidden;
-            transition: 0.4s;
         }
 
-        .shine-btn::before, .audit-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: skewX(-25deg);
-            animation: shine-loop 5s infinite;
+        .shine-btn h3 { color: #ffffff; font-size: 1.1rem; margin-bottom: 5px; }
+        .shine-btn p { color: #94a3b8; font-size: 0.85rem; line-height: 1.4; }
+
+        /* Floating WhatsApp Icon */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; left: 25px;
+            width: 60px; height: 60px;
+            background-color: #25d366; color: #FFF;
+            border-radius: 50px; display: flex;
+            align-items: center; justify-content: center;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; text-decoration: none; transition: 0.3s;
         }
 
-        @keyframes shine-loop {
-            0% { left: -150%; }
-            20% { left: 150%; }
-            100% { left: 150%; }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+        /* Glassy Notification Window (About Me) */
+        #aboutPopup {
+            position: fixed; bottom: -500px; right: 20px;
+            width: 320px; background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px; padding: 22px; z-index: 999;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .shine-btn h3 {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
+        #aboutPopup.show { bottom: 25px; }
+        #aboutPopup h2 { color: #000; font-size: 1.1rem; margin-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 5px; }
+        #aboutPopup p { color: #000; font-size: 0.85rem; line-height: 1.5; font-weight: 500; }
 
-        .shine-btn p {
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-
-        .whatsapp-btn {
-            margin-top: 40px;
-            background: #ffffff;
-            color: #000;
-            padding: 15px 45px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .footer-text {
-            margin-top: 40px;
-            font-size: 10px;
-            color: #475569;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
+        .close-btn { position: absolute; top: 12px; right: 18px; cursor: pointer; color: #000; font-weight: bold; font-size: 20px; }
+        .footer-text { margin-top: 50px; font-size: 10px; color: #475569; text-align: center; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="logo-container">
-            <!-- Professional Laptop SVG Icon -->
-            <svg class="laptop-icon" viewBox="0 0 24 24">
-                <path d="M20,18c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/>
-            </svg>
-            <h1>SF IT CARE</h1>
-        </div>
+        <svg class="laptop-icon" viewBox="0 0 24 24"><path d="M20,18c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/></svg>
+        <div style="font-size: 1.1rem; margin-bottom: 5px; color: #3b82f6;">Welcome to</div>
+        <h1>SF IT CARE</h1>
         <span class="managed-by">Managed by Shakeel Ahmad</span>
     </section>
 
+    <!-- SEO Analysis Tool -->
     <div class="audit-container">
-        <input type="url" placeholder="Enter website URL...">
-        <button class="analyze-btn">Analyze Now</button>
+        <input type="url" id="userUrl" placeholder="https://yourwebsite.com">
+        <button class="analyze-btn" onclick="startAnalysis()">ANALYZE NOW</button>
     </div>
 
     <section class="services">
-        <a href="#" class="shine-btn">
+        <div class="shine-btn">
             <h3>🚀 SEO Ranking</h3>
-            <p>Strategic optimization for search dominance.</p>
-        </a>
-
-        <a href="#" class="shine-btn">
+            <p>Strategic search engine optimization to dominate search results and drive organic traffic.</p>
+        </div>
+        <div class="shine-btn">
             <h3>⚙️ Web Control</h3>
-            <p>Advanced management & speed optimization.</p>
-        </a>
-
-        <a href="#" class="shine-btn">
-            <h3>📊 Growth Lab</h3>
-            <p>Competitive analysis & brand scaling.</p>
-        </a>
+            <p>Comprehensive website management ensuring high-speed performance and stability.</p>
+        </div>
+        <div class="shine-btn">
+            <h3>📊 Social Media Management</h3>
+            <p>Targeted brand scaling and engagement strategies across all platforms.</p>
+        </div>
     </section>
 
-    <a href="#" class="whatsapp-btn">WORK WITH US</a>
+    <!-- Floating WhatsApp Icon (Change number here) -->
+    <a href="https://wa.me" class="whatsapp-float" target="_blank">
+        <svg style="width:35px; fill:white;" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.292 0-4.505.903-6.213 2.531-1.708 1.628-2.656 3.791-2.656 6.083 0 2.292.948 4.455 2.656 6.083 1.708 1.628 3.921 2.531 6.213 2.531 2.292 0 4.505-.903 6.213-2.531 1.708-1.628 2.656-3.791 2.656-6.083 0-2.292-.948-4.455-2.656-6.083-1.708-1.628-3.921-2.531-6.213-2.531zm3.421 12.305c-.171.478-.847.886-1.18 1.042-.333.156-.763.292-1.396.111-.634-.181-1.372-.622-2.128-1.144-.756-.522-1.442-1.161-2.023-1.859-.581-.698-1.041-1.446-1.314-2.181-.273-.735-.386-1.355-.175-1.782.211-.427.674-.755 1.018-.948.344-.193.639-.234.887-.041.248.193.535.53.774.883.239.353.447.747.318.918-.129.171-.433.313-.679.522-.246.209-.434.427-.225.807.209.38.742 1.258 1.547 1.932.805.674 1.488.887 1.868.995.38.108.611.041.821-.211.21-.252.887-1.042 1.139-1.396.252-.354.505-.292.847-.135.342.157 2.164 1.021 2.249 1.18.085.159.085.674-.085 1.151z"/></svg>
+    </a>
+
+    <!-- Glassy About Me Notification -->
+    <div id="aboutPopup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>About Me</h2>
+        <p>Welcome to SF IT CARE! We specialize in elevating your business in the digital world. I am Shakeel Ahmad, expert in SEO, Web Control, and Social Media Management. Our mission is to rank your website on Google's first page, ensuring a powerful online presence and business growth.</p>
+    </div>
 
     <div class="footer-text">© 2024 SF IT CARE • SHAKEEL AHMAD</div>
+
+    <script>
+        // Analysis Function
+        function startAnalysis() {
+            var url = document.getElementById('userUrl').value;
+            if (url) {
+                if (!url.startsWith('http')) { url = 'https://' + url; }
+                window.open('https://web.dev' + encodeURIComponent(url), '_blank');
+            } else {
+                alert("Please enter a website URL first.");
+            }
+        }
+
+        // 1 Second Popup Timer
+        setTimeout(function() {
+            document.getElementById('aboutPopup').classList.add('show');
+        }, 1000);
+
+        function closePopup() {
+            document.getElementById('aboutPopup').classList.remove('show');
+        }
+    </script>
 
 </body>
 </html>
